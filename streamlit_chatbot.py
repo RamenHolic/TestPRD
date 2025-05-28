@@ -2,8 +2,6 @@ import streamlit as st
 import requests
 import os
 
-headers = {"Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_KEY')}"}
-
 # Judul aplikasi
 st.title("🤖 Chatbot Asuransi - Gratis & Online")
 
@@ -13,6 +11,7 @@ user_question = st.text_input("Tanyakan apa pun tentang asuransi:")
 # Fungsi untuk kirim ke Hugging Face API
 def ask_huggingface(question):
     API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
+    headers = {"Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_KEY')}"}
     payload = {
         "inputs": question,
         "parameters": {"max_new_tokens": 300}
