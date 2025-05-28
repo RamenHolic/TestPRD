@@ -10,7 +10,7 @@ user_question = st.text_input("Tanyakan apa pun tentang asuransi:")
 
 # Fungsi untuk kirim ke Hugging Face API
 def ask_huggingface(question):
-    API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-large"
+    API_URL = "https://api-inference.huggingface.co/models/Trelis/Llama-2-7b-chat-hf-hosted-inference-8bit"
     headers = {"Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_KEY')}"}
     payload = {
         "inputs": question,
