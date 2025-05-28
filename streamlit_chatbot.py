@@ -21,14 +21,12 @@ def ask_huggingface(question):
     }
 
     response = requests.post(API_URL, headers=headers, json=payload)
+    print(response.status_code)
+    print(response.text)
     try:
         return response.json()[0]['generated_text']
     except Exception as e:
         return "Maaf, terjadi kesalahan: " + str(e)
-
-response = requests.post(API_URL, headers=headers, json=payload)
-print(response.status_code)
-print(response.text)
 
 # Tampilkan respons jika user memasukkan pertanyaan
 if user_question:
