@@ -12,7 +12,7 @@ user_question = st.text_input("Tanyakan apa pun tentang asuransi:")
 
 # Fungsi untuk kirim ke Hugging Face API
 def ask_huggingface(question):
-    API_URL = "https://google/flan-t5-large"
+    API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
     payload = {
         "inputs": question,
         "parameters": {"max_new_tokens": 300}
