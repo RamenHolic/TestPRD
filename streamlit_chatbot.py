@@ -12,7 +12,7 @@ user_question = st.text_input("Tanyakan apa pun tentang asuransi:")
 
 # Fungsi untuk kirim ke Hugging Face API
 def ask_huggingface(question):
-    API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1"
+    API_URL = "https://huggingface.co/masterful/gligen-1-4-generation-text-box"
     headers = {"Authorization": f"Bearer YOUR_HUGGINGFACE_API_KEY"}
 
     payload = {
