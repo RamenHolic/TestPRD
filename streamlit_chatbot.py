@@ -26,6 +26,10 @@ def ask_huggingface(question):
     except:
         return "Maaf, terjadi kesalahan atau kuota gratis habis."
 
+response = requests.post(API_URL, headers=headers, json=payload)
+print(response.status_code)
+print(response.text)
+
 # Tampilkan respons jika user memasukkan pertanyaan
 if user_question:
     with st.spinner("Sedang memproses jawaban..."):
