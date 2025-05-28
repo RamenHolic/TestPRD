@@ -21,8 +21,8 @@ def ask_huggingface(question):
     }
 
     response = requests.post(API_URL, headers=headers, json=payload)
-    print(response.status_code)
-    print(response.text)
+    print("Status code:", response.status_code)
+    print("Response text:", response.text)
     try:
         return response.json()[0]['generated_text']
     except Exception as e:
