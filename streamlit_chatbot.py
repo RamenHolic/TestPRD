@@ -1,5 +1,8 @@
 import streamlit as st
 import requests
+import os
+
+headers = {"Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_KEY')}"}
 
 # Judul aplikasi
 st.title("🤖 Chatbot Asuransi - Gratis & Online")
