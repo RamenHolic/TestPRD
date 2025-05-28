@@ -23,8 +23,8 @@ def ask_huggingface(question):
     response = requests.post(API_URL, headers=headers, json=payload)
     try:
         return response.json()[0]['generated_text']
-    except:
-        return "Maaf, terjadi kesalahan atau kuota gratis habis."
+    except Exception as e:
+        return "Maaf, terjadi kesalahan: " + str(e)
 
 response = requests.post(API_URL, headers=headers, json=payload)
 print(response.status_code)
